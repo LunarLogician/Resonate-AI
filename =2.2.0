@@ -1,0 +1,17 @@
+Requirement already satisfied: torch in ./venv/lib/python3.12/site-packages (2.7.0)
+Collecting transformers==4.31.0
+  Using cached transformers-4.31.0-py3-none-any.whl.metadata (116 kB)
+Requirement already satisfied: filelock in ./venv/lib/python3.12/site-packages (from transformers==4.31.0) (3.18.0)
+Collecting huggingface-hub<1.0,>=0.14.1 (from transformers==4.31.0)
+  Using cached huggingface_hub-0.30.2-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: numpy>=1.17 in ./venv/lib/python3.12/site-packages (from transformers==4.31.0) (1.26.2)
+Requirement already satisfied: packaging>=20.0 in ./venv/lib/python3.12/site-packages (from transformers==4.31.0) (25.0)
+Collecting pyyaml>=5.1 (from transformers==4.31.0)
+  Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Requirement already satisfied: regex!=2019.12.17 in ./venv/lib/python3.12/site-packages (from transformers==4.31.0) (2024.11.6)
+Collecting requests (from transformers==4.31.0)
+  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting tokenizers!=0.11.3,<0.14,>=0.11.1 (from transformers==4.31.0)
+  Using cached tokenizers-0.13.3.tar.gz (314 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'canceled'
