@@ -1,0 +1,3 @@
+[submodule "analyser"]
+	path = analyser
+	url = https://github.com/AdamWilliamChalmers/analyser.git
