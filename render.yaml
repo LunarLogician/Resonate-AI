@@ -38,7 +38,9 @@ services:
   - type: web
     name: main-service
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      python -m pip install --upgrade pip
+      pip install -r main-requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: OPENAI_API_KEY
@@ -54,8 +56,13 @@ services:
   - type: web
     name: esg-service
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python flask_app/esg.py
+    buildCommand: |
+      python -m venv .venv
+      source .venv/bin/activate
+      pip install -r requirements.txt
+    startCommand: |
+      source .venv/bin/activate
+      python flask_app/esg.py
     envVars:
       - key: OPENAI_API_KEY
         sync: false
@@ -64,8 +71,13 @@ services:
   - type: web
     name: additional-service
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: |
+      python -m venv .venv
+      source .venv/bin/activate
+      pip install -r requirements.txt
+    startCommand: |
+      source .venv/bin/activate
+      python -m uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: OPENAI_API_KEY
         sync: false 
